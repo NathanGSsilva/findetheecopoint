@@ -24,6 +24,7 @@
                         <li><a href="{{ asset('sobre-nos') }}">Sobre nos</a></li>
                         <li><a href="{{ asset('cadastro') }}">Cadastro</a></li>
                         <li><a href="{{ asset('cadastro') }}">Login</a></li>
+                        <li><a href="{{ asset('cadastro') }}">conta</a></li>
                     </ul>
                 </nav>
             </div>

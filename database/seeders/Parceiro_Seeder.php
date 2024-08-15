@@ -14,7 +14,7 @@ class Parceiro_Seeder extends Seeder
      */
     public function run(): void
     {
-        $faker = Faker::create('pt_BR');
+        $faker = Faker::create('en_US');
 
         for($i = 0; $i <= 10; $i++){
             DB::table('parceiros')->insert([
@@ -31,5 +31,3 @@ class Parceiro_Seeder extends Seeder
         }
     }
 }
-
-
