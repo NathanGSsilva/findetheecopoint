@@ -42,7 +42,8 @@
                     <ul class="list-group mt-3">
                         <li class="list-group-item"><a href="{{ route('dashboard') }}">Home</a></li>
                         <li class="list-group-item"><a href="{{ route('ecopontos.index')}}">EcoPontos</a></li>
-                        <li class="list-group-item"><a href="#">Usuários</a></li>
+                        <li class="list-group-item"><a href="{{ route('parceiros.index')}}">Parceiros</a></li>
+                        <li class="list-group-item"><a href="{{ route('usuarios.index')}}">Usuários</a></li>
                     </ul>
                 </nav>
 

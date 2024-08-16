@@ -13,7 +13,9 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        return view("home");
+        $usuario = Usuario::paginate(10);
+        
+        return view("admin.usuarios.index", compact('usuario'));
     }
 
     /**

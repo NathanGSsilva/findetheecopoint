@@ -4,6 +4,7 @@ use App\Http\Controllers\EcoPontoController;
 use App\Http\Controllers\ParceiroController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FindController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -39,3 +40,12 @@ Route::get('/admin/parceiros/editar/{id}', [ParceiroController::class, "edit"])-
 Route::get('/admin/parceiros/visualizar/{id}', [ParceiroController::class, "show"])->name('parceiros.show');
 Route::put('/admin/parceiros/atualizar/{id}',[ParceiroController::class, "update"])->name('parceiros.update');
 Route::delete('/admin/parceiros/deletar/{id}',[ParceiroController::class, "destroy"])->name('parceiros.destroy');
+
+//ROTAS PARCEIROS
+Route::get('/admin/usuarios',[UsuarioController::class, "index"])->name('usuarios.index');
+Route::get('/admin/usuarios/cadastrar', [UsuarioController::class, "create"])->name('usuarios.create');
+Route::post('/admin/usuarios/cadastrar/salvar', [UsuarioController::class, "store"])->name('usuarios.store');
+Route::get('/admin/usuarios/editar/{id}', [UsuarioController::class, "edit"])->name('usuarios.edit');
+Route::get('/admin/usuarios/visualizar/{id}', [UsuarioController::class, "show"])->name('usuarios.show');
+Route::put('/admin/usuarios/atualizar/{id}',[UsuarioController::class, "update"])->name('usuarios.update');
+Route::delete('/admin/usuarios/deletar/{id}',[UsuarioController::class, "destroy"])->name('usuarios.destroy');
