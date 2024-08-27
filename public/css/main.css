@@ -12,7 +12,6 @@
 
 body{
     background: linear-gradient(90deg, rgb(37, 208, 34) 0%, rgb(0, 207, 21) 100%); 
-    
 }
 
 /* BANNER HOME */
@@ -46,6 +45,12 @@ body{
     height: 65px;
 }
 
+#menu{
+    background-color: #fff;
+    padding-left: 420px;
+    padding-right: 420px;
+}
+
 #menu ul {
     display: flex;
     list-style: none;
@@ -54,10 +59,15 @@ body{
 #menu ul li {
     margin-top: 40px;
     padding: 30px;
+
+}
+
+.imghome {
+    margin-top: 20px;
 }
 
 #menu ul li a {
-    color: #fff;
+    color: #000;
     font-size: 17px;
 }
 
@@ -65,6 +75,7 @@ body{
     color: #fff;
     text-align: center;
     margin-top: 30px;
+    
     display: flex;
     flex-direction: column;
 }
@@ -72,6 +83,7 @@ body{
 .texto1 {
     font-size: 20px;
     margin-top: 80px;
+    padding-left: 40px;
     text-align: left;
     color: #fff;
 }
@@ -79,6 +91,7 @@ body{
 .texto2 {
     margin-top: 250px;
     text-align: right;
+    padding-right: 40px;
     color: #ffffffb0;
     font-weight: bold;
 
@@ -318,7 +331,7 @@ footer h3 {
     height: 220px;
     width: 100%;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 110%;
     background-position: center;
 }
 

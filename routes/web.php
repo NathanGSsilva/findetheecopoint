@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\EcoPontoController;
+use App\Http\Controllers\AutenticacaoController;
 use App\Http\Controllers\ParceiroController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FindController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
+
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -31,6 +33,7 @@ Route::get('/admin/ecopontos/editar/{id}', [EcoPontoController::class, "edit"])-
 Route::get('/admin/ecopontos/visualizar/{id}', [EcoPontoController::class, "show"])->name('ecopontos.show');
 Route::put('/admin/ecopontos/atualizar/{id}',[EcoPontoController::class, "update"])->name('ecopontos.update');
 Route::delete('/admin/ecopontos/deletar/{id}',[EcoPontoController::class, "destroy"])->name('ecopontos.destroy');
+Route::get('/admin/ecopontos/buscar',[EcoPontoController::class, "buscar"])->name('ecopontos.buscar');
 
 //ROTAS PARCEIROS
 Route::get('/admin/parceiros',[ParceiroController::class, "index"])->name('parceiros.index');
@@ -49,3 +52,6 @@ Route::get('/admin/usuarios/editar/{id}', [UsuarioController::class, "edit"])->n
 Route::get('/admin/usuarios/visualizar/{id}', [UsuarioController::class, "show"])->name('usuarios.show');
 Route::put('/admin/usuarios/atualizar/{id}',[UsuarioController::class, "update"])->name('usuarios.update');
 Route::delete('/admin/usuarios/deletar/{id}',[UsuarioController::class, "destroy"])->name('usuarios.destroy');
+
+//ROTAS AUTENTICAÇÃO
+ 

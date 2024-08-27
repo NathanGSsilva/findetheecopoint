@@ -93,4 +93,13 @@ class EcoPontoController extends Controller
         // };
 
     }
+
+    public function buscar(string $id){
+
+    $ecopontos = Ecoponto::where('tipolixo', 'cep')->get();  // Busca todos os usuários 
+    
+    return view('index', compact('ecopontos'));
+
+    }
+
 }

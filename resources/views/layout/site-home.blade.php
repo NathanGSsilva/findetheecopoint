@@ -6,46 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find The EcoPoint</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <header id="banner">
-        <div class="container">
-            <div id="cabecalho">
-                <nav id="menu">
+
+    
+        <div id="cabecalho">
+            <nav id="menu">
                 <ul>
-                        <li>
-                        <li><a href="{{ asset('seja-um-parceiro') }}">Seja um parceiro</a></li>
-                        <li><a href="{{ asset('educativo') }}">Educativo</a></li>
-                        <li><a href="{{ asset('categoria') }}">Categorias</a></li>
-                        <a href="{{ asset('') }}" class="imghome"><img src="img/foto-logo.svg" alt="logo-empresa" class="imghome"></a>
-                        <li><a href="{{ asset('sobre-nos') }}">Sobre nos</a></li>
-                        <li><a href="{{ asset('cadastro') }}">Cadastro</a></li>
-                        <li><a href="{{ asset('cadastro') }}">Login</a></li>
-                        <li><a href="{{ asset('cadastro') }}">conta</a></li>
-                    </ul>
-                </nav>
+                    <li><a href="{{ asset('seja-um-parceiro') }}">Seja um parceiro</a></li>
+                    <li><a href="{{ asset('educativo') }}">Educativo</a></li>
+                    <li><a href="{{ asset('categoria') }}">Categorias</a></li>
+                    <a href="{{ asset('') }}" class="imghome"><img src="img/foto-logo.svg" alt="logo-empresa"
+                            class="imghome"></a>
+                    <li><a href="{{ asset('sobre-nos') }}">Sobre nos</a></li>
+                    <li><a href="{{ asset('cadastro') }}">Cadastro</a></li>
+                    <li><a href="{{ asset('cadastro') }}">Login</a></li>
+                    <li><a href="{{ asset('cadastro') }}">conta</a></li>
+                </ul>
+            </nav>
+        </div>    
+
+    <header id="banner">
+        <div id="textoBack">
+            <div class="texto1">
+                <p>“DESCUBRA ONDE FICAM<br>
+                    TODOS OS PONTOS DE<br>
+                    DESCARTE PRÓXIMOS<br>
+                    A VOCÊ!”</p>
             </div>
-            <div id="textoBack">
-                <div class="texto1">
-                    <p>“DESCUBRA ONDE FICAM<br>
-                        TODOS OS PONTOS DE<br>
-                        DESCARTE PRÓXIMOS<br>
-                        A VOCÊ!”</p>
-                </div>
-                <div class="texto2">
-                    <p>Aqui você encontra o lugar certo<br>
-                        para reciclar seu lixo e<br>
-                        colaborar com nosso mundo.</p>
-                </div>
+            <div class="texto2">
+                <p>Aqui você encontra o lugar certo<br>
+                    para reciclar seu lixo e<br>
+                    colaborar com nosso mundo.</p>
             </div>
         </div>
     </header>
+    </header>
 
 
-    @yield("conteudo")
+    @yield('conteudo')
 
     <footer id="rodape">
         <div class="container" id="linhaRodape">
