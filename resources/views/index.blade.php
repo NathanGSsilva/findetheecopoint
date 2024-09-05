@@ -2,46 +2,66 @@
 
 @section('conteudo')
     <main>
-        <section id="fundo-principal-2">
 
-            <div class="container">
+        <div class="fundo-verde">
 
-                <h2 class="space-title">Descubra os pontos de descarte próximos a você!</h2>
+            <header id="banner">
 
-                <div id="menuBusca">
 
-                    <div id="imgBusca">
-                        <img src="img/foto-logo-branca.svg" alt="logo-empresa" width="120">
+                <div id="textoBack">
+
+                    <div class="texto1">
+                        <p>“DESCUBRA ONDE FICAM<br>
+                            TODOS OS PONTOS DE<br>
+                            DESCARTE PRÓXIMOS<br>
+                            A VOCÊ!”</p>
                     </div>
 
-                    <form action="{{ route('ecopontos.buscar') }}" method="get" id="barraBusca">
-
-                        <div class="cep">
-                            <h3>Escolha a categoria do lixo:</h3>
-                            <input type="text" name="tipolixo" id="" placeholder="Digite um objeto...">
-                        </div>
-
-                        <div class="cep">
-                            <h3>Digite seu CEP:</h3>
-                            <input type="text" name="cep" id="" placeholder="Digite seu cep...">
-                        </div>
-
-                        <button type="submit" name="botao-busca" class="botao-busca">buscar <i
-                                class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
-
-                    </form>
-
+                    <div class="texto2">
+                        <p>Aqui você encontra o lugar certo<br>
+                            para reciclar seu lixo e<br>
+                            colaborar com nosso mundo.</p>
+                    </div>
                 </div>
+            </header>
 
-            </div>
+            <section id="fundo-principal-2">
 
-        </section>
+                <div class="container">
 
-        <section id="fundo-principal-1">
-            <div class="container">
-                <h2 class="space-title-2">Pontos de descarte comuns da sua cidade!</h2>
+                    <h2 class="space-title">Descubra os pontos de descarte próximos a você!</h2>
 
-                <div id="teste12">
+                    <div id="menuBusca">
+
+                        <div id="imgBusca">
+                            <img src="img/foto-logo-branca.svg" alt="logo-empresa" width="120">
+                        </div>
+
+                        <form action="{{ route('ecopontos.buscar') }}" method="get" id="barraBusca">
+
+                            <div class="cep">
+                                <h3>Escolha a categoria do lixo:</h3>
+                                <input type="text" name="tipolixo" id="" placeholder="Digite um objeto...">
+                            </div>
+
+                            <div class="cep">
+                                <h3>Digite seu CEP:</h3>
+                                <input type="text" name="cep" id="" placeholder="Digite seu cep...">
+                            </div>
+
+                            <button type="submit" name="botao-busca" class="botao-busca">buscar <i
+                                    class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+
+                <div class="container">
+
+                    <h2 class="space-title">Pontos de descarte comuns da sua cidade!</h2>
 
                     <div id="mapa">
                         <iframe
@@ -50,62 +70,50 @@
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                         <nav id="legenda-mapa">
+
                             <ul>
+
                                 <li>
                                     <div class="red"><i class="fa-solid fa-map-pin"></i> - Empresas parceiras</div>
                                 </li>
+
                                 <li>
                                     <div class="blue"><i class="fa-solid fa-map-pin"></i> - Empresas publicas</div>
                                 </li>
+
                                 <li>
-                                    <div class="black"><i class="fa-solid fa-map-pin"></i> - Empresas particulares</div>
+                                    <div class="black"><i class="fa-solid fa-map-pin"></i> - Empresas particulares
+                                    </div>
                                 </li>
                             </ul>
                         </nav>
                     </div>
+                </div>
+            </section>
 
-                    <div id="mapa">
+            <section id="fundo-principal-3">
 
-                        @foreach ($ecopontos as $eco)
+                <div class="container">
 
-                            <thead>
-                                <h1>resultados</h1>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Local</th>
-                                </tr>
-                            </thead>
+                    <h2 class="space-title">NOSSOS PARCEIROS!</h2>
 
-                            <tbody>
-                                <tr>
-                                    <td>{{ $eco->nome }}</td>
-                                    <td>{{ $eco->email }}</td>
-                                    
-                                </tr>
-                            </tbody>
+                    <div id="parceiros">
 
-                        @endforeach
+                        <img src="img/parceiros-logo/global-solucoes.png" alt="">
+                        <img src="img/parceiros-logo/mult-uvr.png" alt="">
+                        <img src="img/parceiros-logo/nature-residuos.png" alt="">
+                        <img src="img/parceiros-logo/trata-entulho.png" alt="">
+                        <img src="img/parceiros-logo/vm-coleta.png" alt="">
+                    </div>
+
+                    <div class="bolinha">
+
+                        <p>.</p>
+                        <p>.</p>
+                        <p>.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="fundo-principal-3">
-            <div class="container">
-                <h2 class="space-title">NOSSOS PARCEIROS!</h2>
-                <div id="parceiros">
-                    <img src="img/parceiros-logo/global-solucoes.png" alt="">
-                    <img src="img/parceiros-logo/mult-uvr.png" alt="">
-                    <img src="img/parceiros-logo/nature-residuos.png" alt="">
-                    <img src="img/parceiros-logo/trata-entulho.png" alt="">
-                    <img src="img/parceiros-logo/vm-coleta.png" alt="">
-                </div>
-                <div class="bolinha">
-                    <p>.</p>
-                    <p>.</p>
-                    <p>.</p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 @endsection

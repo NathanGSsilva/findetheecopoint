@@ -3,7 +3,7 @@
 @section('conteudo')
 <div class="d-flex justify-content-between mt-3">
     <h2>Lista de Usuarios</h2>
-    <a href="{{ route('parceiros.create') }}" class="btn btn-primary">Cadastrar</a>
+    <a href="{{ route('usuarios.create') }}" class="btn btn-primary">Cadastrar</a>
 </div>
 
 <hr>
@@ -15,15 +15,17 @@
     {{session('sucesso')}}
 
 </div>
+
 @endif
 
 @if (@session('error'))
 
-<div class="alert alert-error">
+<div class="alert alert-danger">
 
     {{session('error')}}
 
 </div>
+
 @endif
 
 
@@ -47,11 +49,11 @@
             <td>{{ $user -> email }}</td>
 
             <td>
-                <a href="{{ route('parceiros.show',['id'=> $user -> id]) }}" class="btn btn-primary">Visualizar</a>
-                <a href="{{ route('parceiros.edit', ['id' => $user -> id]) }}" class="btn btn-secondary">Editar</a>
+                <a href="{{ route('usuarios.show',['id'=> $user -> id]) }}" class="btn btn-primary">Visualizar</a>
+                <a href="{{ route('usuarios.edit', ['id' => $user -> id]) }}" class="btn btn-secondary">Editar</a>
 
 
-                <form action="{{ route('parceiros.destroy', ['id' => $user -> id]) }}" style="display: inline-block" method="post">
+                <form action="{{ route('usuarios.destroy', ['id' => $user -> id]) }}" style="display: inline-block" method="post">
                     </style>
                     @csrf
                     @method('delete')

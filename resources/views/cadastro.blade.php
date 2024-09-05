@@ -1,4 +1,4 @@
-@extends('layout.site-geral')
+@extends('layout.site-home')
 
 @section('conteudo')
     <main>
@@ -6,8 +6,9 @@
             <div id="banner3"></div>
             <div id="textoParceiro">
                 <div class="container">
-                    <p>login</p>
-                    <h3 id="parceiro1">Quer fazer parte da equipe Findtheecopoint?</h3>
+                    <p>Registre-se</p>
+                    <h3 id="parceiro1">Crie sua conta na Findtheecopoint!</h3>
+                    <h2 class="space-title2">É bem facil, basta preencher o formulario e enviar!</h2>
                 </div>
             </div>
             <div class="container">
@@ -16,7 +17,6 @@
 
                     <div class="container">
 
-                        <h2 class="space-title2">É bem facil, basta preencher o formulario e enviar!</h2>
 
                         <div id="menuBusca1">
 
@@ -24,7 +24,7 @@
                                 <img src="img/foto-logo-branca.svg" alt="logo-empresa">
                             </div>
 
-                            <form action="{{ route('usuarios.store') }}" method="POST" id="barraBusca">
+                            <form action="{{ route('find.store') }}" method="post" id="barraBusca">
                             @csrf
 
                                 <div class="cep1">
@@ -38,17 +38,16 @@
                                 </div>
 
                                 <div class="cep1">
-                                    <label for="senha"> <h3>Senha</h3> </label>
-                                    <input type="password" id="senha" name="senha" value="" placeholder="Digite sua senha">
+                                    <label for="password"> <h3>Senha</h3> </label>
+                                    <input type="password" id="password" name="password" value="" placeholder="Digite sua senha">
                                 </div>
 
                                 <div class="cep1">
-                                    <label for="cfsenha"> <h3>Confirme a senha</h3> </label>
-                                    <input type="text" id="cfsenha" name="cfsenha" value="" placeholder="Confirme sua senha">
+                                    <label for="password_confirmed"> <h3>Confirme a senha</h3> </label>
+                                    <input type="password" id="password_confirmation" name="password_confirmation" value="" placeholder="Confirme sua senha">
                                 </div>
 
                                 <button type="submit" name="botao-busca1" class="botao-busca">Enviar</button>
-
                                 
                             </form>
 

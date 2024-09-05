@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find The EcoPoint</title>
     <link rel="stylesheet" href="css/main.css">
+
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,39 +19,45 @@
 <body>
 
     
-        <div id="cabecalho">
-            <nav id="menu">
-                <ul>
-                    <li><a href="{{ asset('seja-um-parceiro') }}">Seja um parceiro</a></li>
-                    <li><a href="{{ asset('educativo') }}">Educativo</a></li>
-                    <li><a href="{{ asset('categoria') }}">Categorias</a></li>
-                    <a href="{{ asset('') }}" class="imghome"><img src="img/foto-logo.svg" alt="logo-empresa"
-                            class="imghome"></a>
-                    <li><a href="{{ asset('sobre-nos') }}">Sobre nos</a></li>
-                    <li><a href="{{ asset('cadastro') }}">Cadastro</a></li>
-                    <li><a href="{{ asset('cadastro') }}">Login</a></li>
-                    <li><a href="{{ asset('cadastro') }}">conta</a></li>
-                </ul>
-            </nav>
-        </div>    
+        @if (@session('sucesso'))
 
-    <header id="banner">
-        <div id="textoBack">
-            <div class="texto1">
-                <p>“DESCUBRA ONDE FICAM<br>
-                    TODOS OS PONTOS DE<br>
-                    DESCARTE PRÓXIMOS<br>
-                    A VOCÊ!”</p>
-            </div>
-            <div class="texto2">
-                <p>Aqui você encontra o lugar certo<br>
-                    para reciclar seu lixo e<br>
-                    colaborar com nosso mundo.</p>
-            </div>
+        <div class="mensagem-sucesso">
+        
+            {{session('sucesso')}}
+        
         </div>
-    </header>
-    </header>
 
+        @endif
+        
+        @if (@session('error'))
+        
+        <div class="mensagem-sucesso">
+        
+            {{session('error')}}
+        
+        </div>
+
+        @endif
+
+    </div>
+
+    <div id="cabecalho">
+        <nav id="menu">
+            <ul>
+                <li><a href="{{ asset('seja-um-parceiro') }}">Seja um parceiro</a></li>
+                <li><a href="{{ asset('educativo') }}">Educativo</a></li>
+                <li><a href="{{ asset('categoria') }}">Categorias</a></li>
+                <a href="{{ asset('') }}" class="imghome"><img src="img/foto-logo.svg" alt="logo-empresa"
+                        class="imghome"></a>
+                <li><a href="{{ asset('sobre-nos') }}">Sobre nos</a></li>
+                <li><a href="{{ asset('cadastro') }}">Cadastro</a></li>
+                <li><a href="{{ route('login.form') }}">Login</a></li>
+                <li><a href="{{ asset('cadastro') }}">conta</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    
 
     @yield('conteudo')
 
@@ -111,7 +121,10 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
 @section('conteudo')
     <div class="d-flex justify-content-between mt-3">
         <h2>Visualizar Usuarios</h2>
-        <a href="cadastrar.php" class="btn btn-primary">Cadastrar</a>
+        <a href=" {{ route("usuarios.create")}} " class="btn btn-primary">Cadastrar</a>
     </div>
 
     <hr>
@@ -22,6 +22,6 @@
             <td>{{ $usuario-> email }}</td>
         </tr>
     </table>
-    <a href="{{ route('usuario.edit', ['id'=> $usuario->id]) }}" class="btn btn-primary">Editar</a>
-    <a href="{{ route('usuario.index') }}" class="btn btn-secondary">Cancelar</a>
+    <a href="{{ route('usuarios.edit', ['id'=> $usuario->id]) }}" class="btn btn-primary">Editar</a>
+    <a href="{{ route('usuarios.index') }}" class="btn btn-secondary">Cancelar</a>
 @endsection

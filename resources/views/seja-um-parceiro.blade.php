@@ -1,4 +1,4 @@
-@extends('layout.site-geral')
+@extends('layout.site-home')
 
 @section('conteudo')
     <main>
