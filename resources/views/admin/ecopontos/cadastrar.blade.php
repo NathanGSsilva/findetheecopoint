@@ -26,7 +26,7 @@
         <form action="{{ route('ecopontos.store') }}" method="POST">
         @csrf <!--  gera campo de segurança -->
             <div class="form-group">
-                <label for="name">Nome:</label>
+                <label for="nome">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome" value="{{ old('nome') }}">
             </div>
             <div class="form-group">

@@ -16,6 +16,7 @@ Route::get('/politica', [FindController::class, "politica"])->name('politica');
 Route::get('/seja-um-parceiro', [FindController::class, "sejaumparceiro"])->name('sejaumparceiro');
 Route::get('/sobre-nos', [FindController::class, "sobrenos"])->name('sobrenos');
 Route::post('/usuarios/cadastrar/salvar', [FindController::class, "store"])->name('find.store');
+Route::get('/conta', [FindController::class, "conta"])->name('find.conta');
 
 //DASHBOARD
 Route::get('/admin/dashboard', [DashboardController::class, "dashboard"])->name('dashboard');

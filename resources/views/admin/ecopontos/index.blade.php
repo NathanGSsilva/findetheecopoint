@@ -32,7 +32,7 @@
         <tr>
             <th>ID</th>
             <th>Nome</th>
-            <th>E-mail</th>
+            <th>Localização</th>
             <th>Ação</th>
         </tr>
     </thead>

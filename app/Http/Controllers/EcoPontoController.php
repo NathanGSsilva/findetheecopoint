@@ -28,15 +28,17 @@ class EcoPontoController extends Controller
         $request->validate([
             'nome' => 'required',
             'latitude' => 'required',
-            'longitude' => 'required'
+            'longitude' => 'required',
+            'categoria' => 'categoria',
+            'endereco' => 'endereco'
         ]);
 
         Ecoponto::create([
             'nome' => $request->nome,
             'latitude' => $request->latitude,
             'longitude' => $request->longitude,
-            'categoria' => $request->longitude,
-            'endereco' => $request->longitude
+            'categoria' => $request->categoria,
+            'endereco' => $request->endereco
         ]);
 
         return redirect()->route('ecopontos.index')->with('sucesso','EcoPonto cadastrado com sucesso!!');
@@ -54,43 +56,47 @@ class EcoPontoController extends Controller
     public function edit(string $id)
     {
 
-        // $usuario = Point::findOrFail($id);
-        return view('admin.usuarios.editar', compact('usuario'));
+        $ecoponto = Ecoponto::findOrFail($id);
+        return view('admin.ecopontos.editar', compact('ecoponto'));
     }
 
     public function update(Request $request, string $id)
     {
         
-        // $request->validate([
-        //     'nome' => 'required',
-        //     'email' => 'required|string|email|unique:usuarios,email,' . $id,
-        //     'password' => 'nullable|min:8|confirmed',
-        // ]);
+        $request->validate([
+            'nome' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
+            'categoria' => 'required',
+            'endereco' => 'required'
+        ]);
 
-        // $usuario =  Point::findOrFail($id);
+        $categoria =  Ecoponto::findOrFail($id);
 
-        // $usuario->update([
-        //     'nome' => $request->nome,
-        //     'email' => $request->email,
-        //     'password' => $request->password ? Hash::make($request->password) : $usuario->password
-        // ]);
+        $categoria->update([
+            'nome' => $request->nome,
+            'latitude' => $request->latitude,
+            'longitude' => $request->longitude,
+            'categoria' => $request->categoria,
+            'endereco' => $request->endereco
+        ]);
 
-        return redirect()->route('usuario.index')->with('sucesso', 'usuario atualizado com sucesso!!');
+        return redirect()->route('ecoponto.index')->with('sucesso', 'ecoponto atualizado com sucesso!!');
     }
 
     public function destroy(string $id)
     {
-        // try{
+        try{
 
-        //     $usuario = Point::FindOrFail($id);
-        //     $usuario->delete();
-        //     return redirect()->route('usuario.index')->with('success', 'Usuario deletado com sucesso!!');
+            $ecoponto = Ecoponto::FindOrFail($id);
+            $ecoponto->delete();
+            return redirect()->route('ecopontos.index')->with('success', 'Usuario deletado com sucesso!!');
             
-        // }catch(\Exception $e){
+        }catch(\Exception $e){
             
-        //     return redirect()->route('usuario.index')->with('error', 'Usuario deletado com sucesso!!!');
+            return redirect()->route('ecopontos.index')->with('error', 'Usuario deletado com sucesso!!!');
         
-        // };
+        };
 
     }
 

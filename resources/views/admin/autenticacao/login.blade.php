@@ -6,10 +6,20 @@
 
             <div id="banner3"></div>
 
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="list-unstyled">
+                        @foreach ($errors->all() as $erro)
+                            <li>{{ $erro }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <div id="textoParceiro">
                 <div class="container">
-                    <p>login</p>
-                    <h3 id="parceiro1">Quer fazer parte da equipe Findtheecopoint?</h3>
+                    <p></p>
+                    <h3 id="parceiro1">Login</h3>
                 </div>
             </div>
 
@@ -21,19 +31,7 @@
 
                     <div class="container">
 
-                        <h2 class="space-title2">É bem facil, basta preencher o formulario e enviar!</h2>
-
                         <div id="menuBusca1">
-
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul class="list-unstyled">
-                                        @foreach ($errors->all() as $erro)
-                                            <li>{{ $erro }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
 
                             <div id="imgBusca1">
                                 <img src="img/foto-logo-branca.svg" alt="logo-empresa">
