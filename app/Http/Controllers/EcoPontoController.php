@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Foto;
+use Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Ecoponto;
 use Exception;
 use Illuminate\Http\Request;
+use Storage;
 
 class EcoPontoController extends Controller
 {
   
     public function index()
     {
-        $ecoponto = Ecoponto::paginate(10);
+        $ecoponto = Ecoponto::paginate(15);
 
         return view('admin.ecopontos.index', compact('ecoponto')); 
     }
@@ -27,24 +30,30 @@ class EcoPontoController extends Controller
 
         $request->validate([
             'nome' => 'required',
+            'endereco' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
-            'categoria' => 'categoria',
-            'endereco' => 'endereco'
+            'funcionamento' => 'required',
+            'descricao' => 'required',
+            'lixos' => 'required'
         ]);
 
-        Ecoponto::create([
-            'nome' => $request->nome,
-            'latitude' => $request->latitude,
-            'longitude' => $request->longitude,
-            'categoria' => $request->categoria,
-            'endereco' => $request->endereco
-        ]);
+        $ecoponto = Ecoponto::create($request->all());
 
-        return redirect()->route('ecopontos.index')->with('sucesso','EcoPonto cadastrado com sucesso!!');
+        if ($request->hasFile('fotos')) {
+            foreach ($request->file('fotos') as $file) {
+                $caminhoFoto = $file->store('foto','public');
+                Foto::create([
+                    'ecoponto_id'=> $ecoponto->id,
+                    'imagem'=> $caminhoFoto
+                ]);
+            }
+        }
+            
+        return redirect()->route('ecopontos.index')->with('sucesso','Cadastro Realizado com Sucesso!');
+    }
 
         // dd($request);
-    }
 
     public function show(string $id)
 
@@ -65,47 +74,42 @@ class EcoPontoController extends Controller
         
         $request->validate([
             'nome' => 'required',
+            'endereco' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
-            'categoria' => 'required',
-            'endereco' => 'required'
+            'funcionamento' => 'required',
+            'descricao' => 'required',
+            'lixos' => 'required'
         ]);
 
         $categoria =  Ecoponto::findOrFail($id);
 
         $categoria->update([
             'nome' => $request->nome,
+            'endereco' => $request->endereco,
             'latitude' => $request->latitude,
             'longitude' => $request->longitude,
-            'categoria' => $request->categoria,
-            'endereco' => $request->endereco
+            'funcionamento' => $request->funcionamento,
+            'descricao' => $request->descricao,
+            'lixos' => $request->lixos
         ]);
 
-        return redirect()->route('ecoponto.index')->with('sucesso', 'ecoponto atualizado com sucesso!!');
+        return redirect()->route('ecopontos.index')->with('sucesso', 'ecoponto atualizado com sucesso!!');
     }
 
     public function destroy(string $id)
     {
-        try{
-
-            $ecoponto = Ecoponto::FindOrFail($id);
+        try {
+            $ecoponto = Ecoponto::findOrFail($id);
+            foreach ($ecoponto->fotos as $foto) {
+                Storage::disk('public')->delete($foto->imagem);
+                $foto->delete();
+            }
             $ecoponto->delete();
-            return redirect()->route('ecopontos.index')->with('success', 'Usuario deletado com sucesso!!');
-            
-        }catch(\Exception $e){
-            
-            return redirect()->route('ecopontos.index')->with('error', 'Usuario deletado com sucesso!!!');
-        
-        };
+            return redirect()->route('ecopontos.index')->with('sucesso', 'Ecoponto deletado com sucesso!!!');
+        } catch (\Exception $e) {
+            return redirect()->route('ecopontos.index')->with('error', 'Erro ao deletar o ecoponto');
+        }
 
     }
-
-    public function buscar(string $id){
-
-    $ecopontos = Ecoponto::where('tipolixo', 'cep')->get();  // Busca todos os usuários 
-    
-    return view('index', compact('ecopontos'));
-
-    }
-
 }

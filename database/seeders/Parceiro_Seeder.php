@@ -20,7 +20,7 @@ class Parceiro_Seeder extends Seeder
             DB::table('parceiros')->insert([
                 'nome' => $faker->name(),
                 'email'=> $faker->email(),
-                'telefone' => $faker->cellphone(),
+                'telefone' => $faker->phoneNumber(),
                 'rua'=> $faker->streetName(),
                 'numero' => $faker->randomDigit(),
                 'bairro' => $faker->city(),

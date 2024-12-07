@@ -21,11 +21,12 @@ class EcopontoSeeder extends Seeder
         for($i = 0; $i <= 10; $i++){
             DB::table('ecopontos')->insert([
                 'nome' => $faker->name(),
+                'endereco' => $faker->city(),
                 'latitude'=> $faker->latitude(),
                 'longitude' => $faker->longitude(),
-                'categoria'=> $faker->userName(),
-                'endereco' => $faker->city()
-                
+                'funcionamento'=> $faker->name(),
+                'descricao'=> $faker->name(),
+                'lixos'=> $faker->name(),
             ]);
         }
     }

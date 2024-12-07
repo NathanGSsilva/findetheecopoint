@@ -32,7 +32,9 @@
         <tr>
             <th>ID</th>
             <th>Nome</th>
-            <th>Localização</th>
+            <th>Endereço</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
             <th>Ação</th>
         </tr>
     </thead>
@@ -44,6 +46,8 @@
             <td>{{ $ponto -> id }}</td>
 
             <td>{{ $ponto -> nome }}</td>
+            <td>{{ $ponto -> endereco }}</td>
+            <td>{{ $ponto -> latitude }}</td>
             <td>{{ $ponto -> latitude }}</td>
             <td>
                 <a href="{{ route('ecopontos.show',['id'=> $ponto -> id]) }}" class="btn btn-primary">Visualizar</a>

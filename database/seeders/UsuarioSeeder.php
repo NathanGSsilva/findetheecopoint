@@ -18,10 +18,11 @@ class UsuarioSeeder extends Seeder
         $faker = Faker::create('pt_BR');
 
         for($i = 0; $i <= 10; $i++){
-            DB::table('ecopontos')->insert([
+            DB::table('usuarios')->insert([
                 'nome' => $faker->name(),
                 'email' => $faker->name(),
-                'senha' => $faker->name()
+                'password' => $faker->name()
+                
             ]);
         }
     }

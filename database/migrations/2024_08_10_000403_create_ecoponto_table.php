@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('ecopontos', function (Blueprint $table) {
             $table->id();
-            $table->string("nome");
-            $table->string("latitude", 50);
-            $table->string("longitude", 50);
-            $table->string("categoria");
-            $table->string("endereco");
+            $table->char("nome");
+            $table->char("endereco");
+            $table->decimal("latitude", 10,8);
+            $table->decimal("longitude", 11,8);
+            $table->text("funcionamento");
+            $table->text("descricao");
+            $table->text("lixos");
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ecoponto');
+        Schema::dropIfExists('ecopontos');
     }
 };
