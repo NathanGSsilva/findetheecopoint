@@ -41,10 +41,6 @@ class FindController extends Controller
    {
       return view('sobre-nos');
    }
-   public function conta()
-   {
-      return view('conta');
-   }
 
    public function store(Request $request)
    {
@@ -64,7 +60,3 @@ class FindController extends Controller
       return redirect()->route('home')->with('sucesso', 'Cadastrado concluido com sucesso!!');
    }
 }
-
-
-
-

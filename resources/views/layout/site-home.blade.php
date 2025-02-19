@@ -52,12 +52,9 @@
                 <li><a href="{{ asset('sobre-nos') }}">Sobre nos</a></li>
                 <li><a href="{{ asset('cadastro') }}">Cadastro</a></li>
                 <li><a href="{{ route('login.form') }}">Login</a></li>
-                <li><a href="{{ route('find.conta') }}">conta</a></li>
             </ul>
         </nav>
     </div>
-
-    
 
     @yield('conteudo')
 

@@ -17,8 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UsuarioSeeder::class);
         $this->call(Parceiro_Seeder::class);
         $this->call(EcopontoSeeder::class);
-
-        
       
     }
 }

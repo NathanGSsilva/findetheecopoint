@@ -7,7 +7,7 @@
             <div id="banner3"></div>
 
             @if ($errors->any())
-                <div class="alert alert-danger">
+                <div class="mensagem-sucesso">
                     <ul class="list-unstyled">
                         @foreach ($errors->all() as $erro)
                             <li>{{ $erro }}</li>
